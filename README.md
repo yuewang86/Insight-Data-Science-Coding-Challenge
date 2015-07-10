@@ -15,12 +15,12 @@ jdk 1.6.0
 max os X
 
 <h2>Other explanations</h2>
-I. There are two java files:
+<h5>I. There are two java files:</h5>
 
 1. words_tweeted.java (for 1st fuction)
 
 2. median_unique.java (for 2nd function)
 
-II. run.sh
+<h5>II. run.sh</h5>
 
 In the sun.sh, I used <i>javac</i> command to compile the java files and then use <i>java</i> command to run the class file.
