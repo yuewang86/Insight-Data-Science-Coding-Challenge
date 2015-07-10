@@ -39,8 +39,7 @@ public class median_unique {
 		        		else{
 		        			treeMap.put(temp, 1);
 		        		}
-		        		e++;
-		        		s = e;
+		        		s = ++e;
 		        	}
 		        	else
 		        		e++;
