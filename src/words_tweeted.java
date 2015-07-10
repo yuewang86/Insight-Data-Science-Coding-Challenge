@@ -15,43 +15,43 @@ public class words_tweeted {
 		//read input file by line and save data to treeMap
 		TreeMap<String, Integer> treeMap = new TreeMap<String, Integer>();
 		File fileInput = new File(inputFileName);
-        BufferedReader reader = null;
+		BufferedReader reader = null;
 		try {
-            reader = new BufferedReader(new FileReader(fileInput));
-            String tempString = null;
-            int line = 1;
+        		reader = new BufferedReader(new FileReader(fileInput));
+        		String tempString = null;
+        		int line = 1;
             
-            while ((tempString = reader.readLine()) != null) {
-                //System.out.println("line " + line + ": " + tempString);//change to call method
-                line++;
+        		while ((tempString = reader.readLine()) != null) {
+        			//System.out.println("line " + line + ": " + tempString);//change to call method
+         			line++;
                 
-                int s = 0, e = 0;		
-        		for(int i=0; i<tempString.length(); i++){
-        			if(tempString.charAt(i)==' ' || i == tempString.length()-1){
-        				String temp = i==tempString.length()-1? tempString.substring(s, e+1):tempString.substring(s,e);
-        				if(treeMap.containsKey(temp)){
-        					treeMap.put(temp, treeMap.get(temp)+1);
+                		int s = 0, e = 0;		
+        			for(int i=0; i<tempString.length(); i++){
+        				if(tempString.charAt(i)==' ' || i == tempString.length()-1){
+        					String temp = i==tempString.length()-1? tempString.substring(s, e+1):tempString.substring(s,e);
+        					if(treeMap.containsKey(temp)){
+        						treeMap.put(temp, treeMap.get(temp)+1);
+        					}
+        					else{
+        						treeMap.put(temp, 1);
+        					}
+        					s = ++e;
         				}
-        				else{
-        					treeMap.put(temp, 1);
-        				}
-        				s = ++e;
+        				else
+        					e++;
         			}
-        			else
-        				e++;
-        		}
-            }
-            reader.close();
-        } catch (IOException e) {
-            e.printStackTrace();
-        } finally {
-            if (reader != null) {
-                try {
-                    reader.close();
-                } catch (IOException e1) {
-                }
-            }
-        }
+         		}
+            		reader.close();
+        	} catch (IOException e) {
+            		e.printStackTrace();
+        	} finally {
+         		if (reader != null) {
+                		try {
+                    			reader.close();
+                		} catch (IOException e1) {
+                		}
+            		}
+        	}
 
         try {
         	File fileOutput = new File(outputFileName);
